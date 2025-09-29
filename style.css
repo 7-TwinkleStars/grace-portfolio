@@ -415,7 +415,7 @@ main .profile{
     display: inline-block;
     font-size: 11px;
     line-height: 18px;
-    color: #1e0488;
+    color: #d8dbe2;
     font-weight: 500;
     text-transform: uppercase;
     border-radius: 4px;
@@ -630,4 +630,5 @@ main .contact{
     }
 
 }
+
 
