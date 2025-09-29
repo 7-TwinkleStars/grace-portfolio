@@ -1,25 +1,47 @@
-// Menu links
-const menuLinks = {
-    getAbout: document.getElementById("about"),
-    getResume: document.getElementById("resume"),
-    getContact: document.getElementById("contact")
-};
 
-// Function to remove active classes
+// Menu links
+let getAbout = document.getElementById("getAbout");
+let getResume = document.getElementById("getResume");
+let getContact = document.getElementById("getContact");
+
+// Sections
+let about = document.getElementById("about");
+let resume = document.getElementById("resume");
+let contact = document.getElementById("contact");
+
 function removeClass() {
-    document.querySelectorAll("nav a").forEach(link => link.classList.remove("selected"));
-    document.querySelectorAll("main section").forEach(sec => sec.classList.remove("view"));
+    // Links
+    getAbout.classList.remove('selected');
+    getResume.classList.remove('selected');
+    getContact.classList.remove('selected');
+    // Sections
+    about.classList.remove('view');
+    resume.classList.remove('view');
+    contact.classList.remove('view');
 }
 
-// Add event listeners to each nav link
-Object.keys(menuLinks).forEach(linkId => {
-    let navLink = document.getElementById(linkId);
-    let section = menuLinks[linkId];
-
-    navLink.addEventListener("click", function (e) {
-        e.preventDefault(); // Always handle click (desktop + mobile)
+getAbout.addEventListener('click', function (e) {
+    if (window.innerWidth > 1040) {
+        e.preventDefault();
         removeClass();
-        section.classList.add("view");
-        navLink.classList.add("selected");
-    });
+        about.classList.add('view');
+        getAbout.classList.add('selected');
+    }
+
 });
+getResume.addEventListener('click', function (e) {
+    if (window.innerWidth > 1040) {
+        e.preventDefault();
+        removeClass();
+        resume.classList.add('view');
+        getResume.classList.add('selected');
+    }
+})
+getContact.addEventListener('click', function (e) {
+    if (window.innerWidth > 1040) {
+        e.preventDefault();
+        removeClass();
+        contact.classList.add('view');
+        getContact.classList.add('selected');
+    }
+})
